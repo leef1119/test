@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+</head>
+<body>
+<a-scene>
+    <a-assets>
+        <!-- Single source video. -->
+        <video id="video" style="display:none"
+               autoplay loop crossorigin="anonymous" playsinline webkit-playsinline>
+            <!-- MP4 video source. -->
+            <source type="video/mp4"
+                    src="asset/moon.mp4" />
+        </video>
+    </a-assets>
+    <a-camera user-height="0" >
+
+        <!-- Text element for display messaging.  Hide once video is playing. -->
+        <a-entity id="msg" position="0 -0.3 -1.5" text="align:center;
+                width:3;
+                wrapCount:100;
+                color:red;
+                value:Click window to make the video play, if needed."
+                  hide-once-playing="#video">
+        </a-entity>
+    </a-camera>
+    <a-videosphere src="#video" ></a-videosphere>
+</a-scene>
+</body>
+</html>
